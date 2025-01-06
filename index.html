@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <style>
+        :root {
+            --bg-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --accent-green: #00ff00;
+            --accent-red: #ff0000;
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal {
+            background-color: var(--bg-dark);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .title {
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+        }
+
+        .date {
+            text-align: center;
+            color: #888;
+            margin-bottom: 1.5rem;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            max-height: 300px;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        .content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .content::-webkit-scrollbar-thumb {
+            background-color: var(--accent-green);
+            border-radius: 3px;
+        }
+
+        .agreement {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .checkbox-container {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkbox-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: transparent;
+            border: 2px solid var(--accent-green);
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-container input:checked ~ .checkmark {
+            background-color: var(--accent-green);
+        }
+
+        .checkmark:after {
+            content: '';
+            position: absolute;
+            display: none;
+            left: 8px;
+            top: 4px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .checkbox-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .agreement a {
+            color: var(--accent-green);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .agreement a:hover {
+            text-decoration: underline;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s;
+            min-width: 120px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-accept {
+            background-color: var(--accent-green);
+            color: black;
+        }
+
+        .btn-accept:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-decline {
+            background-color: var(--accent-red);
+            color: white;
+        }
+
+        @media (orientation: portrait) {
+            body {
+                padding: 0;
+            }
+
+            .modal {
+                min-height: 100vh;
+                border-radius: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .content {
+                flex: 1;
+                margin: 2rem 0;
+            }
+
+            .buttons {
+                margin-top: auto;
+                padding-top: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                
+            }
+
+            .agreement {
+                font-size: 0.9rem;
+               
+            }
+            .buttons
+            {
+                padding-bottom:140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <h1 class="title">TERMS AND CONDITIONS</h1>
+        <div class="date">Last Edit: 15/07/2024</div>
+        <div class="content">
+            <p>Greetings of Users,</p>
+            <br>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio cum unde quisquam nemo quibusdam. Aperiam reiciendis dolorum, eligendi molestiae laborum, sunt nesciunt nostrum maxime est, non consequuntur?</p>
+            <br>
+            <p>Minus tempore reiciendis accusamus modi fuga nulla sed, enim ut quae unde ipsa expedita similique praescentium pariatur. Sed impedit ullam, unde, nam saepe voluptates iste in quos similique magnam minima consectetur dolore!</p>
+            <br>
+            <p>Cumque nulla dolor accusantium, deleniti molestias sapiente animi, rerum amet, labore atque odio? Quam enim animi dignissimos delectus velit incidunt temporibus necessitatibus, mollitia repudiandae fugit eligendi dolor architecto totam id consequatur distinctio at eius, facilis est sit.</p>
+        </div>
+        <div class="agreement">
+            <label class="checkbox-container">
+                <input type="checkbox" id="agreeCheckbox">
+                <span class="checkmark"></span>
+            </label>
+            <span>I Agree To The <a href="#" class="terms-link">Terms & Conditions</a> And I read the <a href="#" class="privacy-link">Privacy Policy</a>.</span>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-accept" id="acceptBtn" disabled>Accept</button>
+            <button class="btn btn-decline" id="declineBtn">Decline</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.querySelector('.modal');
+            const acceptBtn = document.getElementById('acceptBtn');
+            const declineBtn = document.getElementById('declineBtn');
+            const checkbox = document.getElementById('agreeCheckbox');
+
+            // Handle checkbox change
+            checkbox.addEventListener('change', () => {
+                acceptBtn.disabled = !checkbox.checked;
+            });
+
+          // Handle accept button click
+        acceptBtn.addEventListener('click', () => {
+          if (checkbox.checked) {
+        modal.style.animation = 'slideOut 0.3s ease forwards';
+        setTimeout(() => {
+            // Redirect to home page
+            window.location.href = 'artical.html'; // It is your home page URL
+        }, 300);
+      }
+  });
+
+            // Handle decline button click
+            declineBtn.addEventListener('click', () => {
+                modal.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => {
+                    alert('Terms declined.');
+                    modal.style.display = 'none';
+                }, 300);
+            });
+
+            // Add slide out animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideOut {
+                    to {
+                        transform: translateY(20px);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
